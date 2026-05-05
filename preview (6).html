@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StarForge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0612;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ===== DOT BACKGROUND ===== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(192,132,252,0.25) 1px, transparent 1px);
+    background-size: 22px 22px;
+    animation: move 18s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    from { transform: translateY(0); }
+    to { transform: translateY(-250px); }
+}
+
+/* ===== DISCORD BAR ===== */
+.discord {
+    background: #120a1c;
+    border-bottom: 1px solid #3a1b4f;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.discord span {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 14s linear infinite;
+    color: #c084fc;
+    font-weight: bold;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 850px;
+    margin: 60px auto;
+    background: rgba(20,10,30,0.75);
+    border: 1px solid #3a1b4f;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    color: #c084fc;
+    margin-bottom: 20px;
+}
+
+/* BOXES */
+.row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(15,8,22,0.85);
+    border: 1px solid #3a1b4f;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.purple {
+    background: #c084fc;
+    color: black;
+}
+
+.dark {
+    background: #1f1a25;
+    color: white;
+    border: 1px solid #3a1b4f;
+}
+
+/* SCRIPT */
+.script {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #3a1b4f;
+    background: rgba(20,10,30,0.75);
+}
+
+textarea {
+    width: 100%;
+    height: 70px;
+    background: #0f0a16;
+    color: white;
+    border: 1px solid #3a1b4f;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+}
+
+.copy {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #c084fc;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- DISCORD -->
+<div class="discord">
+    <span>🚀 Join Our Discord → https://discord.gg/PUE6et7CCz 🚀</span>
+</div>
+
+<div class="container">
+
+<h1>STARFORGE HUB</h1>
+
+<div class="row">
+
+    <div class="box">
+        <div class="title">👑 Premium Access</div>
+        <div class="desc">
+            Instant premium unlock with full access and priority execution system.
+        </div>
+        <button class="purple" onclick="buy()">Buy Premium</button>
+    </div>
+
+    <div class="box">
+        <div class="title">⚡ Lootlabs Key</div>
+        <div class="desc">
+            Secure verification system required to unlock access safely.
+        </div>
+        <button class="dark" onclick="key()">Get Key</button>
+    </div>
+
+</div>
+
+<div class="script">
+
+<h3>Script</h3>
+
+<textarea id="scriptBox">loadstring(game:HttpGet("https://raw.githubusercontent.com/QeropTheeeeeee/ZyroYonkHub/refs/heads/main/ZyroYOnk"))()</textarea>
+
+<button class="copy" onclick="copy()">Copy Script</button>
+
+</div>
+
+</div>
+
+<script>
+
+function copy() {
+    let t = document.getElementById("scriptBox");
+    t.select();
+    document.execCommand("copy");
+
+    let b = document.querySelector(".copy");
+    b.innerText = "Copied ✓";
+
+    setTimeout(() => {
+        b.innerText = "Copy Script";
+    }, 1200);
+}
+
+function buy() {
+    window.open("https://roblox.com", "_blank");
+}
+
+function key() {
+    window.location.href = "https://new.pandadevelopment.net/getkey/httpslootlinkcoms0u4sku?hwid=YOUR_HWID";
+}
+
+</script>
+
+</body>
+</html>
