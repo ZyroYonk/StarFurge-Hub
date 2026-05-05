@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StarForge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* =======================
+   GLOBAL
+======================= */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    background-color: #0b0612;
+    overflow-x: hidden;
+}
+
+/* =======================
+   DOT BACKGROUND
+======================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(192,132,252,0.25) 1px, transparent 1px);
+    background-size: 22px 22px;
+    animation: move1 18s linear infinite;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(160,80,255,0.10) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: move2 30s linear infinite;
+    z-index: -2;
+}
+
+@keyframes move1 { from {transform:translateY(0);} to {transform:translateY(-250px);} }
+@keyframes move2 { from {transform:translateY(0);} to {transform:translateY(-400px);} }
+
+/* =======================
+   HUB
+======================= */
+.hub {
+    max-width: 850px;
+    margin: 60px auto;
+    background: rgba(20,10,30,0.75);
+    border: 1px solid #3a1b4f;
+    border-radius: 18px;
+    padding: 25px;
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    text-align: center;
+    color: #c084fc;
+    letter-spacing: 4px;
+}
+
+/* =======================
+   ICON ANIMATION (FIX)
+======================= */
+.icon {
+    display: inline-block;
+    margin-right: 8px;
+    transform-origin: center;
+}
+
+/* 👑 Crown bounce + rotate */
+.crown {
+    animation: crownAnim 2.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px gold);
+}
+
+@keyframes crownAnim {
+    0%   { transform: translateY(0) rotate(0deg) scale(1); }
+    40%  { transform: translateY(-6px) rotate(-10deg) scale(1.1); }
+    70%  { transform: translateY(-2px) rotate(8deg) scale(1.05); }
+    100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+/* ⚡ Lightning shake glow */
+.lightning {
+    animation: lightningAnim 1s infinite alternate;
+    filter: drop-shadow(0 0 12px #c084fc);
+}
+
+@keyframes lightningAnim {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+    100% { transform: scale(1.25) rotate(8deg); opacity: 1; }
+}
+
+/* =======================
+   BOX
+======================= */
+.row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    min-width: 260px;
+    background: rgba(15,8,22,0.85);
+    border: 1px solid #3a1b4f;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 13px;
+    color: #d8d8d8;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.purple { background:#c084fc; color:black; }
+.dark { background:#1f1a25; color:white; border:1px solid #3a1b4f; }
+
+/* SCRIPT */
+.script {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #3a1b4f;
+    background: rgba(20,10,30,0.75);
+}
+
+textarea {
+    width: 100%;
+    height: 70px;
+    background:#0f0a16;
+    border:1px solid #3a1b4f;
+    color:white;
+    border-radius:10px;
+    padding:10px;
+}
+
+.copy {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #c084fc;
+    border: none;
+    border-radius: 10px;
+}
+
+/* DISCORD BAR */
+.discord {
+    text-align:center;
+    padding:10px;
+    overflow:hidden;
+    background:rgba(15,8,22,0.9);
+    border-bottom:1px solid #3a1b4f;
+}
+
+.discord span {
+    display:inline-block;
+    white-space:nowrap;
+    animation: slide 14s linear infinite;
+    color:#c084fc;
+    font-weight:bold;
+}
+
+@keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- DISCORD -->
+<div class="discord">
+    <span>🚀 Join Our Discord → https://discord.gg/PUE6et7CCz 🚀</span>
+</div>
+
+<div class="hub">
+
+<h1>STARFORGE HUB</h1>
+
+<div class="row">
+
+    <div class="box">
+        <div class="title">
+            <span class="icon crown">👑</span>
+            Premium Access
+        </div>
+        <div class="desc">Instant premium unlock with priority execution and full system access.</div>
+        <button class="purple">Buy Premium</button>
+    </div>
+
+    <div class="box">
+        <div class="title">
+            <span class="icon lightning">⚡</span>
+            Lootlabs Key
+        </div>
+        <div class="desc">Secure verification system for safe access unlock.</div>
+        <button class="dark">Get Key</button>
+    </div>
+
+</div>
+
+<div class="script">
+
+<h3>📜 Script</h3>
+
+<textarea>loadstring(game:HttpGet("https://raw.githubusercontent.com/QeropTheeeeeee/ZyroYonkHub/refs/heads/main/ZyroYOnk"))()</textarea>
+
+<button class="copy">Copy Script</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
